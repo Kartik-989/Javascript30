@@ -1,5 +1,3 @@
-/*exercise 2-----
-
 
 const users = {
     Alex: {
@@ -112,7 +110,6 @@ let country = {
 console.log(`${country.name}\n${country.capital}\n${country.population}\n${country.languages}`)
 
 
-*********/
 
 //// Exercise 2
 
