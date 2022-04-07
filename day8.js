@@ -50,7 +50,7 @@ const users = {
       points: 40
     }
   }
-  
+  /*
 let count =0;
 //user having many skills
 for (const property in users) {
@@ -68,11 +68,11 @@ for (const property in users) {
 
 console.log("no. of users are "+count);
 
-
+*/
 
 //people who are mern stack developer
 for (const property in users) {
-  let flag=0;
+  /*let flag=0;
   for(let i=0;i<users[property].skills.length;i++){
     if(users[property].skills[i]=='React')
     flag++;
@@ -85,10 +85,11 @@ for (const property in users) {
     
   }
    if(flag==4)
-      console.log(property)
- 
+      console.log(property)*/
+    if(users[property].skills.includes('React') && users[property].skills.includes('Express') && users[property].skills.includes('MongoDB') && users[property].skills.includes('Node'))
+        console.log(property)
   }
-  
+ /* 
  
 // all keys in object 
 
@@ -178,3 +179,5 @@ personAccount.addExpenxes('cloth',2000)
 personAccount.addIncome('freelancing',2500)
 
 console.log(personAccount.accountInfo())
+
+*/
