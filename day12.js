@@ -26,7 +26,49 @@ const isValidVariable = (str) => {
     console.log(pattern.test(str));
 }
 isValidVariable('first_name')
-*/
+
 
 //ex2 
+*/
 
+paragraph = `I love teaching If you do not love teaching what else can you love I love Python if you do not love something which can give you all the capabilities to develop an application what else can you love`
+
+
+function tenMostFrequentWords(paragraph,top){
+    const ans=[]
+    
+    const ar = cleanText(paragraph).split(' ')
+    //console.log(ar)
+    let set = new Set(ar)
+    //console.log(set)
+    set.forEach(x =>  {
+        let obj={},count=0
+        ar.forEach(y=>{
+            if(x===y){
+                count++
+            }
+        })
+        obj.word=x
+        obj.count=count
+        ans.push(obj)
+    })
+    //console.log(ans)
+    ans.sort((a,b)=>{
+        return(b.count - a.count)
+    })
+    return ans.slice(0,top)
+}
+console.log(tenMostFrequentWords(paragraph,10))
+
+
+
+/// ex3
+
+sentence = `%I $am@% a %tea@cher%, &and& I lo%#ve %tea@ching%;. There $is nothing; &as& mo@re rewarding as educa@ting &and& @emp%o@wering peo@ple. ;I found tea@ching m%o@re interesting tha@n any other %jo@bs. %Do@es thi%s mo@tivate yo@u to be a tea@cher!?`
+function cleanText(sentence){
+    return(sentence.replace(/[^A-Za-z ]/g,''))
+} 
+
+console.log(cleanText(sentence))
+
+console.log(tenMostFrequentWords(sentence,3))
