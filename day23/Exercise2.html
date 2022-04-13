@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>exe2</title>
+
+</head>
+
+<body>
+</body>
+<script>
+    let body = document.querySelector("body")
+    let keyName = document.createElement("div")
+    keyName.textContent=`Please enter key`
+    keyName.style.textAlign="center"
+    keyName.style.margin="150px auto "
+    keyName.style.fontSize="30px"
+    keyName.style.width="50%"
+    keyName.style.boxShadow=" rgba(0, 0, 0, 0.24) 0px 3px 8px"
+    body.appendChild(keyName)
+
+    let keyCode = document.createElement("div")
+      //keyCode.textContent=`Please enter key`
+      keyCode.style.textAlign="center"
+      keyCode.style.margin=" auto "
+      keyCode.style.fontSize="60px"
+      keyCode.style.width="20%"
+      keyCode.style.boxShadow=" rgba(0, 0, 0, 0.24) 0px 3px 8px"
+    body.appendChild(keyCode)
+
+    body.addEventListener("keydown", function (e) {
+        console.log(e)
+        let keyMessage = `You pressed <span style="color:green;">${e.key}</span>`
+        keyName.innerHTML = keyMessage;
+        let keyCodeMessage = `<span style="color:green;">${e.keyCode}</span>`
+        keyCode.innerHTML = keyCodeMessage;
+    });
+</script>
+</html>

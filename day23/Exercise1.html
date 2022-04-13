@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Number-Generator</title>
+    <style>
+
+        h1,h3,p{
+            text-align: center;
+            margin: auto;
+        }
+        
+
+        input{
+            height:40px;
+            width: 50%;
+            border-color: green;
+            outline: none;
+        }
+        button{
+            background-color: rgb(24, 190, 52);
+            height: 40px;
+            border:none;
+            margin-left: 20px;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Number Generator</h1>
+    <h3>30DaysOfJavaScript Dom Day2</h3>
+    <p>Author:Victor Kenneth</p>
+    <p class ="warning-message"></p>
+    <div class="input" style="text-align: center;margin: 15px;">
+    <input type="text">
+    <button>Generate Numbers</button>
+    </div>
+    
+    <div class="container" style="width :80%;margin: auto; display: flex;flex-wrap: wrap;justify-content: center;">
+
+     </div>
+    <script >
+        function isPrime(x){
+            if(x<2)
+                return false
+            else if(x===2)
+                return true
+            else{
+                for(let i=2;i<x;i++)
+                {
+                    if(x%i===0)
+                        return false
+                }
+            return true
+            }
+        }
+
+
+        let input = document.querySelector("input")
+        let button = document.querySelector("button")
+        let message = document.querySelector(".warning-message")
+        let div = document.querySelector(".container")
+        console.log(message)
+        button.addEventListener("click", function () {
+            let val = input.value;
+            if (typeof (Number(val)) === "number" ) {
+                div.innerHTML = "";
+                input.value = ""
+                message.innerHTML = "";
+                for (let i = 0; i <= val; i++) {
+                    if(isPrime(i)){
+                        let box = document.createElement("div")
+                        box.textContent = i;
+                        box.style.width = "60px";
+                        box.style.backgroundColor = "#e8765f"
+                        box.style.margin = "4px"
+                        box.style.color= "white"
+                        box.style.textAlign="center"
+                        box.style.fontSize="20px"
+                        box.style.fontWeight="bold"
+                        div.appendChild(box)
+                    }
+
+                    else {
+                        if (i % 2 === 0) {
+                            let box = document.createElement("div")
+                            box.textContent = i
+                            box.style.width = "60px";
+                            box.style.backgroundColor = "#368a3a"
+                            box.style.margin = "4px"
+                            box.style.color= "white"
+                            box.style.textAlign="center"
+                            box.style.fontSize="20px"
+                            box.style.fontWeight="bold"
+                            div.appendChild(box)
+                        }
+                        else {
+                            let box = document.createElement("div")
+                            box.textContent = i;
+                            box.style.width = "60px"                            
+                            box.style.backgroundColor = "#e5eb75"
+                            box.style.margin = "4px"
+                            box.style.color= "white"
+                            box.style.textAlign="center"
+                            box.style.fontSize="20px"
+                            box.style.fontWeight="bold"
+                            div.appendChild(box)
+                        }
+                    }
+                }
+            } else if (val.length === 0) {
+                div.innerHTML = ""
+                input.value = "";
+                message.innerHTML = "";
+                message.textContent = "enter a number to generate numbers";
+                message.style.color = "red"
+            } else if (typeof (val) === "string") {
+                div.innerHTML = "";
+                input.value = "";
+                message.innerHTML = "";
+                message.textContent = "please enter number values only";
+                message.style.color = "red"
+            }
+        })
+    </script>
+</body>
+</html>
