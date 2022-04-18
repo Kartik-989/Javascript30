@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Document </title>
+</head>
+<style>
+    .root{
+        margin: auto;
+        padding :   0 5%;
+        margin: 5%;
+    }
+    .name{
+        font-size: 50px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .box{
+        text-align: center;
+        padding: 5%;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        margin: 40px;
+        width: 30%;
+        height: 50px;
+        transition: .2s;
+    }
+    .box:hover{
+        background-color: rgb(194, 172, 167);
+        transform:scale(1.1);
+    }
+    .bio{
+        font-size: large;
+    }
+    .title {
+        background-color: rgb(233, 207, 203);
+        height: 80px;
+        display: flex;
+        text-align: center;
+    }
+    .icon{
+        padding:10px 0 0 20px;
+    }
+    .anim{
+        font-family:initial;
+        font-size: 25px;
+        padding:  20px 0;
+        margin :0 0 0 10px;
+        animation-duration: 2s;
+        animation-name:slidein;
+   }
+
+    @keyframes slidein {
+        from {
+            opacity: 0;
+            margin-right: 70% ;
+            width: 300%;
+        }
+
+        to {
+            opacity: 1;
+            margin-right: 60%;
+            width: 100%;
+        }
+    }
+        
+    .courseBox{
+        display: flex;
+        
+    }
+    #tech{
+        font-size: 35px;
+        font-weight: bold;
+        opacity: 0.2;
+    }
+</style>
+<body>
+    <div class="root">
+
+        <p class="name">A s a b e n e h&nbsp; &nbsp;  Y e t a y e h</p>
+        <div class="title">
+            
+        </div>
+        <p class="bio">
+            I am Asabeneh Yetayeh. I am instructor, developer,
+            motivator and content creator. I love educating people
+            and creating educational materials. In January 2019, I 
+            also creating a teaching material <span style="font-weight: bold;">Javascript For  Everyone</span> . In
+            December 2019, I created <span style="font-weight: bold;">30 Days of Python</span> challenge and in 
+            January 2020 <span style="font-weight: bold;">30 Days of Javascript </span> challenge.
+            
+        </p>
+        <div class="courseBox">
+
+        </div>
+
+        <p style="font-size: 20px;">The technologies I teach &nbsp;<span id ="tech" ></span></p>
+
+
+                
+    </div>
+	<script src="./script.js"></script>
+
+</body>
+
+</html>

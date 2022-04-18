@@ -9,7 +9,7 @@ document.getElementById("lang").addEventListener("click", topSpokenLanguage);
 
 
 function presentData(ar){
-
+let maxBar = ar[0].value
 let data = document.querySelector(".data")
 data.innerHTML=""
 ar.forEach(x=>{
@@ -20,17 +20,28 @@ ar.forEach(x=>{
 
     let f = document.createElement("h5")
     f.innerHTML=`${x.name}`
-    f.style.width="20%"
+    f.style.width="30%"
+    f.style.margin="5px"
     newDiv.appendChild(f)
 
     let bardiv= document.createElement("div")
-    bardiv.style.width="70%"
+    bardiv.style.width="60%"
+    let bar  = document.createElement("div")
+    bar.style.borderRadius="2px"
+    bar.style.backgroundColor="rgb(224, 146, 20)"
+    bar.style.width=`${(x.value/maxBar)*100}%`
+    bar.style.height="30px"
+
+
+    bardiv.appendChild(bar)
     newDiv.appendChild(bardiv)
 
 
     let e = document.createElement("h5")
     e.innerHTML=`${x.value}`
     e.style.width="10%"
+    e.style.paddingLeft="15px"
+    e.style.margin="10px"
     newDiv.appendChild(e)
     data.appendChild(newDiv)
 })

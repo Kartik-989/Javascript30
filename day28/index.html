@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title>Day28</title>
+    <style>
+        .root{
+            width: 80%;
+            margin: auto;
+            text-align: center;
+        }
+        .title{
+            padding: 50px 0px 0px 0px;
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .fields{
+            display: flex;
+        }
+        .input{
+            margin: 2px;
+            border-color:rgb(196, 156, 145) ;
+            border-radius: 2px;
+            border-style: solid;
+            width: 20%;
+            outline-color:rgb(157, 44, 13) ;
+            font-size: 15px;
+            height: 30px;
+        }
+        .button-1 {
+            background-color: rgb(210, 182, 175);
+            border-radius: 2px;
+            border-style: none;
+            box-sizing: border-box;
+            color: rgb(235, 224, 224);
+            margin: 3px;
+            width: 100px;
+            outline: none;
+            position:relative;
+            text-align: center;
+
+        }
+        ul{
+            list-style: none;
+            text-align: center;
+            padding: 0px;
+        }
+        .data{
+            background-color: rgb(219, 184, 174);
+            
+            display: flex;
+            margin: 3px;
+        }
+        .namDiv{
+            margin: 0px;
+            width: 45%;
+            text-align: left;
+            padding-left: 10px ;
+        }
+        .cntDiv{
+            width: 25%;
+            text-align: left;
+        }
+        .scoreDiv{
+            width: 20%;
+            text-align:left;
+
+        }
+        .btnGrp{
+            width: 30%;
+            margin: 3px;
+            display: flex;
+            padding-top: 2px;
+
+        }
+        .btn{
+            width: 45px;
+            height: 45px;
+            margin: 4px;
+            border:none;
+            border-radius: 40px;
+        }
+
+    </style>
+    <body>
+        <p  style="text-align: center;" class="title">30 Days of Javascript Challenge Leaderboard</p>
+        <div class="root">
+            <div class="fields">
+                <input class="input" type="text" placeholder="First Name" id="firstName">
+                <input class="input"type="text" placeholder="Second Name" id="lastName">
+                <input class="input"type="text" placeholder="Country" id="country">
+                <input  class="input" type="number" placeholder="Player Score" id="score">
+                <button class="button-1" role="button" id="addButton"> Add Player </button>
+            </div>
+            <h4 style="text-align: center;color: red;" id="warn" ></h4>
+            <ul class="dispData">
+
+            </ul>
+
+
+        </div>
+        <script src="./script.js"></script>
+    </body>
+</html>

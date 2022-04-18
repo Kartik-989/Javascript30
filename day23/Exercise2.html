@@ -27,11 +27,21 @@
       keyCode.style.boxShadow=" rgba(0, 0, 0, 0.24) 0px 3px 8px"
     body.appendChild(keyCode)
 
+    let caps = false
     body.addEventListener("keydown", function (e) {
         console.log(e)
+        if(e.key.toLowerCase() ==='capslock')
+           { caps = !caps}
         let keyMessage = `You pressed <span style="color:green;">${e.key}</span>`
         keyName.innerHTML = keyMessage;
-        let keyCodeMessage = `<span style="color:green;">${e.keyCode}</span>`
+        let keyCodeMessage=""
+        if(caps || e.shiftKey){
+             keyCodeMessage = `<span style="color:green;">${e.keyCode}</span>`
+        }
+        else{ 
+             keyCodeMessage = `<span style="color:green;">${e.keyCode+32}</span>`
+        }
+
         keyCode.innerHTML = keyCodeMessage;
     });
 </script>
