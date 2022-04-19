@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>30DaysOfJavaScript:30 </title>
+    </head>
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+        body{
+           
+           background-color: rgb(232, 231, 230);
+        }
+        .top{
+            background-color: rgb(232, 231, 230);
+            text-align: center;
+            
+        }
+        #title{
+            color: rgb(230, 158, 26);
+        }
+        .inputData{
+            text-align: center;       
+            padding: 20px;
+            background-color: rgb(249, 243, 243);
+            border-radius: 5px;
+
+        }
+        .input{
+            border-radius: 30px;
+            border-color: grey;
+            outline: none;
+            padding: 10px;
+            margin: 0px 0px 10px 0px;
+            width: 50%;
+        }
+        .button-1 {
+            background-color: rgb(224, 146, 20);
+            border-radius: 25px;
+            border-style: none;
+            box-sizing: border-box;
+            font-size: 14px;
+            font-weight: bold;
+            height: 40px;
+
+            margin: 5px 0px 0px 5px;
+            outline: none;
+            padding: 10px 25px;
+            position:relative;
+            text-align: center;
+
+        }
+        .button-1:hover { background-color:rgb(206, 161, 87); }
+        .chart{
+            background-image: url(./chart.png);
+            background-size: cover;
+            max-height: 30px;
+            border-radius: 0px;
+        }
+        .countries{
+            background-color: rgb(232, 231, 230);
+            display: flex;
+            flex-wrap: wrap;
+            padding: 5px;
+            min-height: 50px;
+        }
+        .cntBox{
+            background-color: rgb(241, 243, 245);
+            width: 200px;
+            padding: 5px;
+            box-sizing: border-box;
+            border-radius: 3px;
+            text-align:center;
+            margin: 5px;
+            
+        }
+        .cntImg{
+            width: 60%;
+            height: 30%;
+        }
+        .chartSelection{
+            background-color: rgb(241, 245, 247);
+            text-align: center;
+            padding: 5px;
+            margin: 5px 5px 5px 5px;
+        }
+        h5{
+            font-weight: normal;
+            margin: 0px;
+            text-align: left;
+            
+        }
+        .graph{
+            margin-bottom: 100px;
+            background-color: rgb(219, 221, 222);
+            padding: 5px;
+        }
+
+    </style>
+    <body>
+        <div class="top">
+            <h1 id="title"> World Countries Data</h1>
+            <p id = "cnt"></p>
+            <p id=" filterdata" style="color:rgb(224, 146, 20) ;"></p>
+        </div>
+        <div class="inputData">
+            <input type="text" class="input" placeholder="Search country by Name, city and languages" id="searchBar">
+            <div class="btn-grp1">
+                <button class="button-1"id="nameSort" >Name</button>
+                <button class="button-1" id="capiSort" >Capital</button>
+                <button class="button-1" id="popuSort">Population</button>
+                <a class="button-1 chart" id="btnChart" onclick="href='#graphSection'"></a>
+
+            </div>
+        </div>
+        <div class="countries">
+
+        </div>
+
+        <div class="graph" id="graphSection">
+            <div class="chartSelection">
+                    <button class="button-1" role="button" id="popu">Population</button>
+                    <button class="button-1" role="button" id="lang">Languages</button>
+                    <p class="btnSub" style="text-align: center;"></p>
+            </div>
+            <div class="data">
+
+            </div>
+
+        </div>
+
+        <script src="./countries_data.js"></script>
+        <script src="./script.js"></script>
+
+    </body>
+
+</html>

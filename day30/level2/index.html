@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            Day30
+        </title>
+    </head>
+    <style>
+        .root{
+            width: 60%;
+            margin: auto;
+            padding-top: 2%;
+        }
+        label{
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid rgb(142, 139, 139);
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-weight: bold;
+            outline :red;
+            
+        }
+
+        p{
+            text-align: center;
+            width: 80%;
+            margin: auto;
+            color: rgb(246, 174, 67);
+            font-size: small;
+            font-weight: bold;
+        }
+        button{
+            height: 40px;
+            width: 25%;
+            font-size: large;
+            font-weight: bold;
+            color: whitesmoke;
+            background-color: rgb(84, 83, 83);
+            border-radius: 4px;
+            border: 1px solid rgb(84, 83, 83);
+        }
+        button:hover{
+            background-color: rgb(153, 146, 146);
+        }
+    </style>
+    <body>
+        <h2 style="text-align: center;margin-top: 9%;">Validating Web Forms</h2>
+        <form class="root">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="fname"  placeholder="Your name"  >
+            <p id="fnameVal"></p>
+
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lname" placeholder="Your last name" >
+            <p id="lnameVal"></p>
+
+            <label for="email">Email</label>
+            <input type="email" id="email"  name="email" placeholder="abc@sdf.xyz"  >
+            <p id="mailVal"></p>
+
+            <label for="pass">Password</label>
+            <input type="password" id="pass"  placeholder="You Password" >
+            <p id="passVal"></p>
+
+            <label for="tel">Telephone</label>
+            <input type="tel" id="tele"  placeholder="Telephone " >
+            <p id="telVal"></p>
+
+            <label for="bio">Bio</label>
+            <input type="text" id="bio" name="bio"  placeholder="Your Bio" >
+            <p id="bioVal"></p>
+
+            <button type="submit" id="submitForm" >Submit</button>
+        </form>
+        <script src="script.js"></script>
+    </body>
+
+</html>
