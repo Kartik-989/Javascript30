@@ -13,7 +13,7 @@ let countriesArray= [
 			"area": 652230
 	},
 	{
-			"name": "Åland Islands",
+			"name": "Aland Islands",
 			"capital": "Mariehamn",
 			"languages": [
 					"Swedish"
@@ -811,10 +811,10 @@ let countriesArray= [
 					"Tigrinya",
 					"Arabic",
 					"English",
-					"Tigre",
+					" Tigre",
 					"Kunama",
 					"Saho",
-					"Bilen",
+					"Bilen ",
 					"Nara",
 					"Afar"
 			],
@@ -2383,10 +2383,10 @@ let countriesArray= [
 					"Afrikaans",
 					"English",
 					"Southern Ndebele",
-					"Southern Sotho",
+					"Southern Sotho" ,
 					"Swati",
-					"Tswana",
-					"Tsonga",
+					" Tswana",
+					"Tsonga" , 
 					"Venda",
 					"Xhosa",
 					"Zulu"

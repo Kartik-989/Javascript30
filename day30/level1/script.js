@@ -1,8 +1,8 @@
 let cntTotal  = document.querySelector("#cnt")
-let subt = document.querySelector("#filterdata")
+let subt = document.querySelector("#subt")
 let searchBar = document.querySelector('#searchBar')
 let sub = document.querySelector(".btnSub")
-
+let nameFilter =false,capitalFilter=false,popuFilter=false;
 let totalPopu = 0;
     for(const x of countriesArray){
         totalPopu += x.population
@@ -13,6 +13,7 @@ cntTotal.innerHTML=`Currently we have ${countriesArray.length} countries`
 let div = document.querySelector(".countries")
 
 function showCountries(arr){
+    
     div.innerHTML=""
     arr.forEach(element => {
     let box = document.createElement("div")
@@ -89,31 +90,78 @@ function filterData(){
 
 }
 function showFilterData(){
+    document.getElementById("capiSort").innerHTML=`Capital `
+    document.getElementById("popuSort").innerHTML=`Population `
+    document.getElementById("nameSort").innerHTML=`Name `
 
-    showCountries(filterData())
+    let ar = filterData()
+    subt.textContent = `${ar.length} countries satisfied the search criteria `
+    showCountries(ar)
     topPopulatedCountries()
 
 }
 function nameSort(){
+    
+    nameFilter = !nameFilter
+    capitalFilter = popuFilter =false
+    document.getElementById("capiSort").innerHTML=`Capital `
+    document.getElementById("popuSort").innerHTML=`Population `
+
     let ar =  filterData()
-    ar.sort((x,y)=>{
-        return( (y.name>x.name)?1:-1)
-    })
-    console.log(ar)
+    if(nameFilter){
+        document.getElementById("nameSort").innerHTML=`Name &#8659`
+        ar.sort((x,y)=>{
+            return( (y.name>x.name)?1:-1)
+        })
+        //console.log(ar)
+        
+    }
+    else{
+        document.getElementById("nameSort").innerHTML=`Name &#8657`
+        ar.sort((x,y)=>{
+            return( (x.name>y.name)?1:-1)
+        })
+    }
     showCountries(ar)
 
 }
 function capiSort(){
+    capitalFilter = !capitalFilter
+    nameFilter = popuFilter = false
+    document.getElementById("nameSort").innerHTML=`Name `
+    document.getElementById("popuSort").innerHTML=`Population`
+
+
     let ar = filterData()
+    if(capitalFilter){
+        document.getElementById("capiSort").innerHTML=`Capital &#8659`
+        ar.sort((x,y)=> (y.capital > x.capital)?1:-1 )
+        
+    }
+    else{
+        document.getElementById("capiSort").innerHTML=`Capital &#8657`
+        ar.sort((x,y)=> (x.capital > y.capital)?1:-1 )
+
+    }
     showCountries(ar)
 
 }
 function popuSort(){
+    popuFilter = ! popuFilter
+    capitalFilter = nameFilter =false
+    document.getElementById("capiSort").innerHTML=`Capital `
+    document.getElementById("nameSort").innerHTML=`Name `
 
     let ar = filterData()
-    ar.sort((x,y)=> y.population-x.population)
+    if(popuFilter){
+        document.getElementById("popuSort").innerHTML=`Population &#8659`
+        ar.sort((x,y)=> y.population-x.population)
+    }
+    else{
+        document.getElementById("popuSort").innerHTML=`Population &#8657`
+        ar.sort((x,y)=> x.population-y.population)
 
-
+    }
     showCountries(ar)
 
 }

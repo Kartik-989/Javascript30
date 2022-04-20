@@ -58,6 +58,11 @@
             max-height: 30px;
             border-radius: 0px;
         }
+        .uparrow{
+            background-image: url(./arr.png);
+            background-size:cover;
+            border-radius: 0px;
+        }
         .countries{
             background-color: rgb(232, 231, 230);
             display: flex;
@@ -67,7 +72,7 @@
         }
         .cntBox{
             background-color: rgb(241, 243, 245);
-            width: 200px;
+            width: 250px;
             padding: 5px;
             box-sizing: border-box;
             border-radius: 3px;
@@ -77,7 +82,7 @@
         }
         .cntImg{
             width: 60%;
-            height: 30%;
+            height: 35%;
         }
         .chartSelection{
             background-color: rgb(241, 245, 247);
@@ -96,13 +101,21 @@
             background-color: rgb(219, 221, 222);
             padding: 5px;
         }
+       .bottom{
+           display: flex;
+           flex-wrap: wrap;
+           padding: 5px;
+           background-color: rgb(208, 213, 215);
+            border-radius: 5px;
+
+        }
 
     </style>
     <body>
         <div class="top">
             <h1 id="title"> World Countries Data</h1>
             <p id = "cnt"></p>
-            <p id=" filterdata" style="color:rgb(224, 146, 20) ;"></p>
+            <p id="subt" style="color:rgb(224, 146, 20) ;"></p>
         </div>
         <div class="inputData">
             <input type="text" class="input" placeholder="Search country by Name, city and languages" id="searchBar">
@@ -129,9 +142,14 @@
             </div>
 
         </div>
+        <div class="bottom">
+            <h2 style="color: rgb(135, 141, 141);font-size: 28px; width: 80%;">Develoved By Kartik</h2>
+            <a class="button-1 uparrow" id="arrow" onclick="href='#title'"></a>
+        </div>
 
         <script src="./countries_data.js"></script>
         <script src="./script.js"></script>
+        
 
     </body>
 
